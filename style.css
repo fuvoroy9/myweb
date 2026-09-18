@@ -1,0 +1,233 @@
+/* পুরো পেজের ব্যাকগ্রাউন্ড ও টেক্সট এলাইনমেন্ট */
+body {
+    background-color: #f6f6fa;   /* পেজের ব্যাকগ্রাউন্ড কালার */
+    color: #1a1a1a;              /* ফন্ট কালার */
+    font-family: Arial, sans-serif; /* ফন্ট স্টাইল */
+    text-align: center;          /* সমস্ত কনটেন্ট স্ক্রিনের মাঝখানে রাখার জন্য */
+}
+
+/* ব্যানারের মূল ব্যাকগ্রাউন্ড, বর্ডার ও ৩ডি টেক্সট স্টাইল */
+h1, h1.heading-3d {
+    color: #1804ca;              /* লেখার নীল কালার */
+    font-family: Arial, sans-serif;
+    font-size: 80px;             /* লেখার সাইজ */
+    font-weight: bold;           /* ৩ডি লুক স্পষ্ট করার জন্য গাঢ় লেখা */
+    background-color: #e9a8a8;   /* ব্যানারের গোলাপি ব্যাকগ্রাউন্ড */
+    padding: 10px 20px;          /* চারপাশের খালি জায়গা (Padding) */
+    display: inline-block;       /* শুধুমাত্র লেখার সমান ব্যানার পাওয়ার জন্য */
+    
+    /* বর্ডার ও শ্যাডো ইফেক্ট */
+    border: 3px solid #2c0aee;   /* নীল রঙের বর্ডার */
+    border-radius: 12px;         /* কোণাগুলো গোল করার জন্য */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* বর্ডার বাইরের ছায়া */
+    
+    /* 🌟 স্ক্রিনের ঠিক মাঝখানে রাখার জন্য 🌟 */
+    margin: 0 auto !important;
+    margin-bottom: 0px !important;
+    line-height: 1.1;
+
+    /* 🌟 লেখার ৩ডি ইফেক্ট (Text Shadow) 🌟 */
+    text-shadow: 
+        1px 1px 0px #e3f733,
+        2px 2px 0px #e3f733,
+        3px 3px 0px #110582,
+        4px 4px 0px #110582,
+        5px 5px 0px #e3f733,
+        6px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* লোগোর বাইরের গোল বক্সের স্টাইল */
+.logo-box {
+    width: 90px;                 /* একদম সমান Width */
+    height: 90px;                /* একদম সমান Height */
+    border-radius: 50%;          /* পারফেক্ট গোল করার জন্য */
+    border: 5px solid #ee0a56;   /* চারপাশের লাল বর্ডার */
+    display: inline-block;       /* লেখার পাশে রাখার জন্য */
+    vertical-align: -12px;       /* লোগোকে নিচে নামিয়ে লেখার সাথে সোজা করা */
+    margin-right: 15px;          /* লোগো ও লেখার মাঝের খালি জায়গা */
+    overflow: hidden;            /* বাইরের অংশ কেটে বাদ দেওয়ার জন্য */
+    box-sizing: border-box;      /* বর্ডার সহ সাইজ সঠিক রাখার জন্য */
+    background-color: #ffffff;   /* লোগোর ব্যাকগ্রাউন্ড সাদা রাখার জন্য */
+    margin-bottom: 0px !important;
+    line-height: 1.1;
+}
+
+/* গোল বক্সের ভেতরের ইমেজের স্টাইল */
+.heading-logo {
+    width: 100%;                 /* বক্সের সমান চওড়া */
+    height: 100%;                /* বক্সের সমান লম্বা */
+    object-fit: contain;         /* মূল লোগো ছবি যেন কেটে না যায় বা চ্যাপ্টা না হয় */
+}
+
+/* h1 এর ঠিক নিচের p ট্যাগ এর মার্জিন দূর করা */
+p {
+    margin-top: 5px !important;
+    margin-bottom: 0 !important;
+    text-align: center;
+}
+
+/* Smart Learning স্লোগান মাঝখানে আনা */
+h2 {
+    color: hsl(352, 92%, 49%);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 55px;
+    margin-left: 0 !important;   /* ডানে সরানোর মার্জিন বাদ দিয়ে মাঝখানে রাখা */
+}   
+
+/* Bright Future স্লোগান */
+h3 {
+    color: #910bdf;
+    text-align: center;
+    font-size: 40px;
+    margin-left: 0 !important;
+}
+
+/* h2 এবং h3 এর ওপরের ও নিচের অতিরিক্ত স্পেস পুরোপুরি বন্ধ করা */
+h2, h3 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1.1;
+}
+
+/* ওয়েবাসাইটে ভিজিট করুন হেডিংটির স্টাইল */
+.section-title {
+    display: inline-block;
+    text-align: center;
+    margin-left: 0;
+}
+
+/* ঠিকানা ব্যানার স্টাইল */
+h4, h4.heading-3d {
+    color: #345a1b;              /* লেখার কালার */
+    font-family: Arial, sans-serif;
+    font-size: 15px;             /* লেখার সাইজ */
+    font-weight: bold;
+    background-color: #eef1ee;   /* ব্যাকগ্রাউন্ড কালার */
+    padding: 8px 18px;           /* চারপাশের খালি জায়গা */
+    display: inline-block;
+    
+    /* বর্ডার ও শ্যাডো ইফেক্ট */
+    border: 3px solid #ee0a15;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    
+    /* মাঝখানে রাখার মার্জিন */
+    margin: 5px auto !important;
+    line-height: 1.2;
+}
+
+/* ভিজিট করুন ব্যানার স্টাইল (লেখা যেন কেটে না যায় তাই সাইজ ক্লিয়ার করা হয়েছে) */
+h5, h5.heading-3d {
+    color: #54c906;              /* লেখার কালার */
+    font-family: Arial, sans-serif;
+    font-size: 34px;             /* লেখার সাইজ সামঞ্জস্যপূর্ণ করা হয়েছে */
+    font-weight: bold;
+    background-color: #e4eeaf;   /* ব্যাকগ্রাউন্ড কালার */
+    padding: 10px 25px;
+    display: inline-block;
+    
+    /* বর্ডার ও শ্যাডো ইফেক্ট */
+    border: 4px solid #ee0a15;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    
+    /* মাঝখানে রাখার মার্জিন */
+    margin: 5px auto !important;
+    line-height: 1.1;
+
+    /* 🌟 লেখার ৩ডি ইফেক্ট (Text Shadow) 🌟 */
+    text-shadow: 
+        1px 1px 0px #82050b,
+        2px 2px 0px #82050b,
+        3px 3px 0px #82050b,
+        4px 4px 0px #82050b,
+        5px 5px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* --------------------------------------------------
+   3D বাটনসমূহ এবং কন্টেইনারের স্টাইল
+----------------------------------------------------- */
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+/* বাটনগুলোর সাধারণ 3D স্টাইল */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;                    /* আইকন ও লেখার মাঝের দূরত্ব */
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+/* মাউস হোভার ইফেক্ট */
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* বাটনে ক্লিক করলে 3D ডাউন ইফেক্ট */
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: none !important;
+}
+
+/* 🎨 ১. আমার বাড়ি */
+.btn-home {
+    background-color: #e67e22;
+    box-shadow: 0 5px 0 #d35400;
+    border: 3px solid #f9f8ff;
+    border-radius: 12px;
+}
+
+/* 🎨 ২. বীরগঞ্জ পৌর উচ্চ বিদ্যালয় */
+.btn-school {
+    background-color: #2ecc71;
+    box-shadow: 0 5px 0 #27ae60;
+    border: 3px solid #f9f8ff;
+    border-radius: 12px;
+}
+
+/* 🎨 ৩. টপ গ্রেড টিউটোরিয়ালস */
+.btn-tutorials {
+    background-color: #9b59b6;
+    box-shadow: 0 5px 0 #8e44ad;
+    border: 3px solid #f9f8ff;
+    border-radius: 12px;
+}
+
+/* 🎨 ৪. মাই বুক */
+.btn-book {
+    background-color: #3498db;
+    box-shadow: 0 5px 0 #2980b9;
+    border: 3px solid #f9f8ff;
+    border-radius: 12px;
+}
+
+/* 🎨 ৫. ইউটিউব চ্যানেল */
+.btn-youtube {
+    background-color: #ff0000;
+    box-shadow: 0 5px 0 #cc0000;
+    border: 3px solid #f9f8ff;
+    border-radius: 12px;
+}
+
+/* 🎨 ৬. ফেসবুক পেজ */
+.btn-facebook {
+    background-color: #1877f2;
+    box-shadow: 0 5px 0 #0d65d9;
+    border: 3px solid #f9f8ff;
+    border-radius: 12px;
+}
