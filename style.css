@@ -9,12 +9,10 @@
 
 /* পুরো ওয়েবসাইটের বডি বা মূল পেজের স্টাইল */
 body {
-    background-color: #f6f6fa; /* পুরো পেজের পটভূমির (Background) হালকা ছাই রঙ */
+    background-color: #f6f6fa; /* পুরো পেজের পটভূমির হালকা ছাই রঙ */
     color: #1a1a1a;            /* পেজের মূল লেখার গাঢ় রঙ */
-    font-family: Arial, Helvetica, sans-serif; /* লেখার জন্য ফন্ট পরিবার নির্ধারণ */
-    text-align: center;        /* পেজের সব উপাদানকে মাঝখানে (Center) রাখার জন্য */
-    
-    /* 🌟 গ্রেডিয়েন্ট বর্ডার 🌟 */
+    font-family: Arial, Helvetica, sans-serif; /* লেখার ফন্ট পরিবার নির্ধারণ */
+    text-align: center;        /* পেজের সব উপাদানকে মাঝখানে রাখার জন্য */
     border: 20px solid transparent; /* চারপাশে ২০ পিক্সেলের দৃশ্যমান বর্ডার স্পেস */
     border-image: linear-gradient(45deg, #1804ca, #ee0a56, #e3f733) 1; /* ৪৫ ডিগ্রি এঙ্গেলে ৩টি রঙের গ্রেডিয়েন্ট বর্ডার */
     margin: 15px;              /* পেজের বাইরে ১৫ পিক্সেল খালি জায়গা */
@@ -23,247 +21,340 @@ body {
 }
 
 /* ==========================================
-   ২. প্রধান শিরোনাম (h1) ও ব্যানার স্টাইল
+   ২. হেডার ও ডিজিটাল ঘড়ি, তারিখ ও বার সেকশন
+========================================== */
+
+/* লাইভ ডিজিটাল ঘড়ি, তারিখ ও বারের কন্টেইনার */
+.clock-container {
+    background-color: #adadf7; /* গাঢ় নীল ব্যাকগ্রাউন্ড */
+    color: #1b02f8;            /* লেখার রঙ সাদা */
+    display: inline-block;     /* লেখার সমান জায়গা নেবে */
+    padding: 8px 18px;         /* ভেতরে প্যাডিং */
+    border-radius: 20px;       /* চারপাশে ক্যাপসুল শেপ করার জন্য গোল বর্ডার */
+    font-size: 24px;           /* ফন্ট সাইজ */
+    font-weight: bold;         /* মোটা লেখা */
+    margin-bottom: 10px;       /* নিচে খালি জায়গা */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* হালকা ড্রপ শ্যাডো */
+}
+
+/* আইকনগুলোর পাশে হালকা ফাঁকা স্পেস দেওয়া */
+.clock-container i {
+    margin-left: 5px;
+    margin-right: 2px;
+}
+
+/* স্ক্রলিং নোটিশ বার সেকশন */
+.notice-bar {
+    background-color: #ffeaa7; /* হালকা হলুদ ব্যাকগ্রাউন্ড */
+    border: 2px solid #fdcb6e;  /* গাঢ় হলুদ বর্ডার */
+    border-radius: 8px;        /* হালকা গোল কোণা */
+    padding: 8px 12px;         /* বক্সের ভেতরের প্যাডিং */
+    margin: 10px auto 20px auto;/* মার্জিন দিয়ে মাঝখানে আনা */
+    display: flex;             /* নোটিশ ব্যাজ ও টেক্সট পাশাপাশি রাখার জন্য */
+    align-items: center;       /* লম্বালম্বি সেন্টারে রাখা */
+    max-width: 900px;          /* সর্বোচ্চ চওড়া নির্ধারণ */
+    font-weight: bold;         /* বোল্ড টেক্সট */
+    color: #fc0303;            /* টেক্সট কালার */
+}
+
+/* নোটিশ বারের লাল টাইটেল ব্যাজ */
+.notice-title {
+    background-color: #d63031; /* লাল ব্যাকগ্রাউন্ড */
+    color: #ffffff;            /* টেক্সট কালার সাদা */
+    padding: 3px 8px;          /* চারপাশের প্যাডিং */
+    border-radius: 5px;        /* কোণা গোল করা */
+    margin-right: 10px;        /* টেক্সট থেকে দূরত্ব */
+    white-space: nowrap;       /* যেন ভেঙে নিচের লাইনে না যায় */
+    font-size: 14px;           /* ফন্ট সাইজ */
+}
+
+/* ==========================================
+   ৩. প্রধান শিরোনাম (h1) ও ব্যানার স্টাইল
 ========================================== */
 
 /* মূল শিরোনাম এবং ৩ডি হেডিং এর স্টাইল */
 h1, h1.heading-3d {
     color: #1804ca;            /* হেডিং এর লেখার নীল রঙ */
-    font-size: 80px;           /* হেডিং এর লেখার ফন্ট সাইজ */
-    font-weight: bold;         /* লেখাকে মোটা বা গাঢ় করার জন্য */
-    background-color: #e9a8a8; /* হেডিং বক্সের ব্যাকগ্রাউন্ডে গোলাপি রঙ */
-    padding: 10px 20px;        /* বক্সের ভেতরে উপরে-নিচে ১০ পিক্সেল এবং ডানে-বামে ২০ পিক্সেল জায়গা */
-    display: inline-block;     /* শুধুমাত্র লেখার সমান ব্যানার সাইজ পাওয়ার জন্য */
-    
-    /* বর্ডার ও শ্যাডো */
-    border: 3px solid #2c0aee; /* চারপাশে ৩ পিক্সেলের গাঢ় নীল বর্ডার */
-    border-radius: 12px;       /* হেডিং বক্সের চার কোণা ১২ পিক্সেল গোল করা */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* বক্সের পেছনে হালকা কালো ছায়া বা শ্যাডো */
-    
-    margin: 0 auto !important; /* হেডিং বক্সটি মাঝখানে রাখার জন্য মার্জিন */
-    line-height: 1.1;          /* লাইনের উচ্চতা ঠিক রাখার জন্য */
+    font-size: 80px;           /* ফন্ট সাইজ */
+    font-weight: bold;         /* লেখাকে মোটা করা */
+    background-color: #e9a8a8; /* গোলাপি ব্যাকগ্রাউন্ড */
+    padding: 10px 20px;        /* চারপাশের প্যাডিং */
+    display: inline-block;     /* কন্টেন্ট অনুযায়ী চওড়া নেওয়া */
+    border: 3px solid #2c0aee; /* ৩ পিক্সেল নীল বর্ডার */
+    border-radius: 12px;       /* কোণা ১২ পিক্সেল গোল করা */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* ৩ডি বক্স শ্যাডো */
+    margin: 0 auto !important; /* মাঝখানে রাখা */
+    line-height: 1.1;          /* লাইনের উচ্চতা */
 
-    /* 🌟 লেখার ৩ডি ইফেক্ট (Text Shadow) 🌟 */
+    /* ৩ডি টেক্সট শ্যাডো */
     text-shadow: 
-        1px 1px 0px #e3f733,   /* ১ম স্তরের হলুদ শ্যাডো */
-        2px 2px 0px #e3f733,   /* ২য় স্তরের হলুদ শ্যাডো */
-        3px 3px 0px #110582,   /* ৩য় স্তরের নীল শ্যাডো */
-        4px 4px 0px #110582,   /* ৪থ স্তরের নীল শ্যাডো */
-        5px 5px 0px #e3f733,   /* ৫ম স্তরের হলুদ শ্যাডো */
-        6px 6px 8px rgba(0, 0, 0, 0.35); /* নিচে আবছা কালো শ্যাডো যা ৩ডি লুক দেয় */
+        1px 1px 0px #e3f733,   /* ১ম স্তর */
+        2px 2px 0px #e3f733,   /* ২য় স্তর */
+        3px 3px 0px #110582,   /* ৩য় স্তর */
+        4px 4px 0px #110582,   /* ৪থ স্তর */
+        5px 5px 0px #e3f733,   /* ৫ম স্তর */
+        6px 6px 8px rgba(0, 0, 0, 0.35); /* আবছা কালো শ্যাডো */
 }
 
 /* লোগোর বাইরের গোল বক্সের স্টাইল */
 .logo-box {
-    width: 90px;               /* লোগো বক্সের চওড়া ৯০ পিক্সেল */
-    height: 90px;              /* লোগো বক্সের উচ্চতা ৯০ পিক্সেল */
-    border-radius: 50%;        /* বক্সটিকে একদম পারফেক্ট গোল করার জন্য */
-    border: 5px solid #ee0a56; /* লোগোর চারপাশে ৫ পিক্সেলের লাল বর্ডার */
-    display: inline-block;     /* হেডিং টেক্সটের পাশে বসানোর জন্য */
-    vertical-align: middle;    /* লেখার সাথে লোগোকে সোজা মাঝখানে সারিবদ্ধ করা */
-    margin-right: 15px;        /* লোগো ও লেখার মাঝে ১৫ পিক্সেল দূরত্ব */
-    overflow: hidden;          /* ইমেজের বাইরের অংশ যেন গোল বক্সের বাইরে না যায় */
-    background-color: #ffffff; /* লোগোর ব্যাকগ্রাউন্ড সাদা রাখা */
-    line-height: 1.1;          /* লাইন হাইট অ্যাডজাস্টমেন্ট */
+    width: 90px;               /* চওড়া ৯০ পিক্সেল */
+    height: 90px;              /* উচ্চতা ৯০ পিক্সেল */
+    border-radius: 50%;        /* গোল শেপ */
+    border: 5px solid #ee0a56; /* লাল বর্ডার */
+    display: inline-block;     /* লেখার পাশে বসানো */
+    vertical-align: middle;    /* লেখার সাথে সোজা সারিবদ্ধ করা */
+    margin-right: 15px;        /* ডানপাশে খালি স্পেস */
+    overflow: hidden;          /* অতিরিক্ত অংশ কেটে বাদ দেওয়া */
+    background-color: #ffffff; /* ব্যাকগ্রাউন্ড সাদা */
+    line-height: 1.1;          /* লাইন হাইট */
 }
 
 /* গোল বক্সের ভেতরের ইমেজের স্টাইল */
 .heading-logo {
-    width: 100%;               /* বক্সের পুরো জায়গা নিয়ে ছবি থাকবে */
-    height: 100%;              /* বক্সের পুরো উচ্চতা নিয়ে ছবি থাকবে */
-    object-fit: contain;       /* মূল ছবি যেন কেটে না যায় বা চ্যাপ্টা না হয় */
+    width: 100%;               /* পুরো বক্স জুড়ে ইমেজ */
+    height: 100%;              /* পুরো উচ্চতা জুড়ে ইমেজ */
+    object-fit: contain;       /* ছবি যেন না কাটে বা চ্যাপ্টা না হয় */
 }
 
 /* ==========================================
-   ৩. সাব-হেডিং ও স্লোগান সেকশন
+   ৪. সাব-হেডিং ও স্লোগান সেকশন
 ========================================== */
 
-/* প্যারাগ্রাফ ট্যাগের জন্য স্পেসিং */
+/* প্যারাগ্রাফের স্পেসিং */
 p {
-    margin-top: 5px !important;    /* প্যারাগ্রাফের উপরে ৫ পিক্সেল খালি জায়গা */
-    margin-bottom: 0 !important;   /* প্যারাগ্রাফের নিচে কোনো স্পেস থাকবে না */
+    margin-top: 5px !important;    /* উপরে ৫px স্পেস */
+    margin-bottom: 0 !important;   /* নিচে স্পেস বন্ধ */
 }
 
-/* h2 এবং h3 এর জন্য সাধারণ সেটিং */
+/* h2 ও h3 এর সাধারণ সেটআপ */
 h2, h3 {
-    margin: 0 !important;          /* বাড়তি সব মার্জিন বন্ধ করা */
-    line-height: 1.2;              /* লেখাগুলোর লাইনের মধ্যে সমতা রাখা */
-}
-
-/* Smart Learning স্লোগান স্টাইল */
-h2 {
-    color: hsl(352, 92%, 49%);     /* স্লোগানের গাঢ় লাল রঙ */
-    font-size: 55px;               /* লেখার ফন্ট সাইজ ৫৫ পিক্সেল */
-}   
-
-/* Bright Future স্লোগান স্টাইল */
-h3 {
-    color: #910bdf;                /* স্লোগানের বেগুনি রঙ */
-    font-size: 40px;               /* লেখার ফন্ট সাইজ ৪০ পিক্সেল */
-}
-
-/* ঠিকানা ব্যানার স্টাইল (h4) */
-h4, h4.heading-3d {
-    color: #345a1b;                /* লেখার সবুজ রঙ */
-    font-size: 15px;               /* লেখার ফন্ট সাইজ ১৫ পিক্সেল */
-    font-weight: bold;             /* লেখা গাঢ় করা */
-    background-color: #eef1ee;     /* হালকা ব্যাকগ্রাউন্ড রঙ */
-    padding: 8px 18px;             /* বক্সের ভেতরের খালি জায়গা */
-    display: inline-block;         /* কন্টেন্ট অনুযায়ী সাইজ নেওয়া */
-    border: 3px solid #ee0a15;     /* ৩ পিক্সেলের লাল বর্ডার */
-    border-radius: 12px;           /* কোণাগুলো ১২ পিক্সেল গোল করা */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* হালকা ছায়ায় ৩ডি লুক */
-    margin: 10px auto !important;  /* মাঝখানে রাখার মার্জিন */
+    margin: 0 !important;          /* মার্জিন রিমুভ */
     line-height: 1.2;              /* লাইন হাইট */
 }
 
-/* "আমাদের ওয়েবসাইট সমূহ ভিজিট করুন" সেকশন টাইটেল (h5) */
-h5, h5.heading-3d {
-    color: #54c906;                /* টিয়া সবুজ রঙের লেখা */
-    font-size: 34px;               /* লেখার ফন্ট সাইজ ৩৪ পিক্সেল */
-    font-weight: bold;             /* লেখা গাঢ় করা */
-    background-color: #e4eeaf;     /* হালকা হলুদ-সবুজ ব্যাকগ্রাউন্ড */
-    padding: 10px 25px;            /* বক্সের ভেতরের স্পেস */
-    display: inline-block;         /* কন্টেন্ট অনুযায়ী সাইজ নেওয়া */
-    border: 4px solid #ee0a15;     /* ৪ পিক্সেল লাল বর্ডার */
-    border-radius: 12px;           /* কোণা গোল করা */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* বর্ডার শ্যাডো */
-    margin: 10px auto !important;  /* অটো মার্জিন দিয়ে সেন্টারে রাখা */
-    line-height: 1.1;              /* লাইনের উচ্চতা */
+/* Smart Learning স্লোগান */
+h2 {
+    color: hsl(352, 92%, 49%);     /* লাল রঙ */
+    font-size: 55px;               /* ফন্ট সাইজ ৫৫px */
+}   
 
-    /* ৩ডি টেক্সট শ্যাডো */
+/* Bright Future স্লোগান */
+h3 {
+    color: #910bdf;                /* বেগুনি রঙ */
+    font-size: 40px;               /* ফন্ট সাইজ ৪০px */
+}
+
+/* ঠিকানা ব্যানার (h4) */
+h4, h4.heading-3d {
+    color: #345a1b;                /* সবুজ টেক্সট */
+    font-size: 15px;               /* ফন্ট সাইজ */
+    font-weight: bold;             /* বোল্ড টেক্সট */
+    background-color: #eef1ee;     /* ব্যাকগ্রাউন্ড */
+    padding: 8px 18px;             /* প্যাডিং */
+    display: inline-block;         /* ইনলাইন ব্লক */
+    border: 3px solid #ee0a15;     /* লাল বর্ডার */
+    border-radius: 12px;           /* কোণা গোল */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* শ্যাডো */
+    margin: 10px auto !important;  /* মার্জিন অটো */
+    line-height: 1.2;              /* লাইন হাইট */
+}
+
+/* সেকশন টাইটেল (h5) */
+h5, h5.heading-3d {
+    color: #54c906;                /* টিয়া সবুজ টেক্সট */
+    font-size: 34px;               /* ফন্ট সাইজ ৩৪px */
+    font-weight: bold;             /* বোল্ড */
+    background-color: #e4eeaf;     /* হলুদ-সবুজ ব্যাকগ্রাউন্ড */
+    padding: 10px 25px;            /* প্যাডিং */
+    display: inline-block;         /* ইনলাইন ব্লক */
+    border: 4px solid #ee0a15;     /* ৪px লাল বর্ডার */
+    border-radius: 12px;           /* কোণা গোল */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* শ্যাডো */
+    margin: 10px auto !important;  /* মার্জিন অটো */
+    line-height: 1.1;              /* লাইন হাইট */
+
+    /* ৩ডি শ্যাডো */
     text-shadow: 
-        1px 1px 0px #82050b,       /* ১ম স্তরের খয়েরি শ্যাডো */
-        2px 2px 0px #82050b,       /* ২য় স্তর */
-        3px 3px 0px #82050b,       /* ৩য় স্তর */
-        4px 4px 0px #82050b,       /* ৪থ স্তর */
-        5px 5px 6px rgba(0, 0, 0, 0.35); /* নিচে নরম কালো শ্যাডো */
+        1px 1px 0px #82050b, 
+        2px 2px 0px #82050b, 
+        3px 3px 0px #82050b, 
+        4px 4px 0px #82050b, 
+        5px 5px 6px rgba(0, 0, 0, 0.35);
 }
 
 /* ==========================================
-   ৪. ৩ডি বাটন সেকশন
+   ৫. ৩ডি বাটন সেকশন
 ========================================== */
 
-/* বাটনগুলোর মূল কন্টেইনার/বক্সের স্টাইল */
+/* বাটন কন্টেইনার */
 .button-container {
-    display: flex;              /* বাটনগুলোকে পাশাপাশি ফ্লেক্স লাইনে সাজানোর জন্য */
-    flex-wrap: wrap;            /* স্ক্রিনে জায়গা না হলে বাটনগুলো নিচে নেমে যাবে */
-    justify-content: center;   /* সবগুলো বাটনকে স্ক্রিনের মাঝখানে রাখার জন্য */
-    gap: 15px;                  /* একটি বাটনের সাথে অন্যটির দূরত্ব */
-    margin-top: 20px;           /* ওপরের অংশ থেকে বাটনের দূরত্ব */
-    padding: 10px;              /* কন্টেইনারের চারপাশের প্যাডিং */
+    display: flex;              /* ফ্লেক্স বক্স */
+    flex-wrap: wrap;            /* জায়গা না হলে নিচে নেমে যাবে */
+    justify-content: center;   /* সেন্টারে সারিবদ্ধ করা */
+    gap: 15px;                  /* বাটনের মাঝের স্পেস */
+    margin-top: 20px;           /* উপরের মার্জিন */
+    padding: 10px;              /* প্যাডিং */
 }
 
 /* সবগুলো ৩ডি বাটনের সাধারণ স্টাইল */
 .btn {
-    display: inline-flex;       /* আইকন ও টেক্সটকে পাশাপাশি বসানোর জন্য */
-    align-items: center;        /* আইকন ও টেক্সটকে লম্বালম্বি সোজা (Vertical Center) করা */
-    gap: 8px;                   /* আইকন ও লেখার মাঝের খালি জায়গা */
-    padding: 12px 22px;         /* বাটনের ভেতরের স্পেস (উপরে-নিচে ১২px, ডানে-বামে ২২px) */
-    font-size: 16px;            /* লেখার সাইজ */
-    font-weight: bold;          /* মোটা লেখা */
-    color: #ffffff;             /* টেক্সটের রঙ সাদা */
-    text-decoration: none;      /* লিঙ্কের নিচের আন্ডারলাইন বাদ দেওয়া */
-    border-radius: 12px;        /* চার কোণা গোল করার জন্য */
-    border: 3px solid #f9f8ff;  /* বাটনের বাইরের ৩ পিক্সেল সাদা বর্ডার */
-    transition: all 0.15s ease-in-out; /* অ্যানিমেশনের সময়কাল */
-    cursor: pointer;            /* মাউস আনলে হাতের আইকন দেখাবে */
-    position: relative;         /* ৩ডি পজিশন সঠিক রাখার জন্য */
+    display: inline-flex;       /* ইনলাইন ফ্লেক্স */
+    align-items: center;        /* ভর্টিক্যাল সেন্টার */
+    gap: 8px;                   /* আইকন ও লেখার স্পেস */
+    padding: 12px 22px;         /* প্যাডিং */
+    font-size: 16px;            /* ফন্ট সাইজ */
+    font-weight: bold;          /* বোল্ড টেক্সট */
+    color: #ffffff;             /* সাদা টেক্সট */
+    text-decoration: none;      /* আন্ডারলাইন রিমুভ */
+    border-radius: 12px;        /* কোণা গোল */
+    border: 3px solid #f9f8ff;  /* ৩px সাদা বর্ডার */
+    transition: all 0.15s ease-in-out; /* ট্রান্সিশন সময় */
+    cursor: pointer;            /* কার্সার পয়েন্টার */
+    position: relative;         /* ৩ডি পজিশনিং */
 }
 
-/* মাউস ধরলে (Hover Effect) */
+/* মাউস ধরলে ৩ডি ফ্লোট ইফেক্ট */
 .btn:hover {
-    transform: translateY(-3px); /* বাটন ৩ পিক্সেল উপরে ভেসে উঠবে */
+    transform: translateY(-3px); /* ৩px উপরে উঠবে */
 }
 
-/* বাটনে ক্লিক করলে (Click 3D Effect) */
+/* বাটনে ক্লিক করলে ৩ডি প্রেস ইফেক্ট */
 .btn:active {
-    transform: translateY(4px);                  /* বাটন ৪ পিক্সেল নিচে চেপে যাবে */
-    box-shadow: 0 0 0 transparent !important;   /* ক্লিক করা অবস্থায় নিচের শ্যাডো গায়েব হবে */
+    transform: translateY(4px);                  /* ৪px নিচে নামবে */
+    box-shadow: 0 0 0 transparent !important;   /* শ্যাডো গায়েব হবে */
 }
 
-/* ১. আমার বাড়ি বাটন */
-.btn-home { 
-    background-color: #e67e22; /* মূল কমলা রঙ */
-    box-shadow: 0 5px 0 #d35400; /* নিচের ৩ডি শ্যাডো */
+/* কাস্টম বাটন কালার ও নিচের ৩ডি শ্যাডো */
+.btn-home      { background-color: #e67e22; box-shadow: 0 5px 0 #d35400; }
+.btn-school    { background-color: #2ecc71; box-shadow: 0 5px 0 #27ae60; }
+.btn-tutorials { background-color: #9b59b6; box-shadow: 0 5px 0 #8e44ad; }
+.btn-book      { background-color: #3498db; box-shadow: 0 5px 0 #2980b9; }
+.btn-youtube   { background-color: #ff0000; box-shadow: 0 5px 0 #cc0000; }
+.btn-facebook  { background-color: #1877f2; box-shadow: 0 5px 0 #0d65d9; }
+
+/* ==========================================
+   ৬. কন্টাক্ট সেকশন ও ফ্লোটিং হোয়াটসঅ্যাপ
+========================================== */
+
+/* কন্টাক্ট ফর্ম কন্টেইনার */
+.contact-section {
+    margin-top: 40px;           /* উপরের মার্জিন */
+    padding: 20px;              /* প্যাডিং */
+    background-color: #ffffff;  /* সাদা ব্যাকগ্রাউন্ড */
+    border-radius: 15px;        /* কোণা গোল করা */
+    border: 2px dashed #9b59b6; /* ড্যাশ ড্যাশ বেগুনি বর্ডার */
+    max-width: 600px;           /* সর্বোচ্চ চওড়া */
+    margin-left: auto;          /* সেন্টারে আনা */
+    margin-right: auto;         /* সেন্টারে আনা */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* হালকা শ্যাডো */
 }
 
-/* ২. বীরগঞ্জ পৌর উচ্চ বিদ্যালয় বাটন */
-.btn-school { 
-    background-color: #2ecc71; /* মূল সবুজ রঙ */
-    box-shadow: 0 5px 0 #27ae60; /* নিচের ৩ডি শ্যাডো */
+/* কন্টাক্ট ফর্মের ডিসপ্লে */
+.contact-form {
+    display: flex;              /* ফ্লেক্স বক্স */
+    flex-direction: column;     /* ফিল্ডগুলো নিচে নিচে থাকবে */
+    gap: 12px;                  /* গ্যাপ */
+    margin-top: 15px;           /* উপরের মার্জিন */
 }
 
-/* ৩. টপ গ্রেড টিউটোরিয়ালস বাটন */
-.btn-tutorials { 
-    background-color: #9b59b6; /* মূল বেগুনি রঙ */
-    box-shadow: 0 5px 0 #8e44ad; /* নিচের ৩ডি শ্যাডো */
+/* ইনপুট ফিল্ড ও টেক্সট এরিয়া */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;                /* ফুল উইডথ */
+    padding: 10px 14px;         /* প্যাডিং */
+    border: 2px solid #ccc;     /* বর্ডার */
+    border-radius: 8px;         /* কোণা গোল */
+    font-family: inherit;       /* ফন্ট */
+    font-size: 15px;            /* ফন্ট সাইজ */
+    outline: none;              /* আউটলাইন রিমুভ */
+    transition: border-color 0.2s; /* পরিবর্তন সময় */
 }
 
-/* ৪. মাই বুক বাটন */
-.btn-book { 
-    background-color: #3498db; /* মূল নীল রঙ */
-    box-shadow: 0 5px 0 #2980b9; /* নিচের ৩ডি শ্যাডো */
+/* টাইপ করার সময় বর্ডার কালার বেগুনি হওয়া */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #9b59b6;      /* বেগুনি বর্ডার */
 }
 
-/* ৫. ইউটিউব চ্যানেল বাটন */
-.btn-youtube { 
-    background-color: #ff0000; /* লাল রঙ */
-    box-shadow: 0 5px 0 #cc0000; /* নিচের ৩ডি শ্যাডো */
+/* ফর্মের বাটন */
+.contact-form button {
+    align-self: center;         /* সেন্টারে রাখা */
+    border: none;               /* বর্ডার রিমুভ */
 }
 
-/* ৬. ফেসবুক পেজ বাটন */
-.btn-facebook { 
-    background-color: #1877f2; /* ফেসবুক নীল রঙ */
-    box-shadow: 0 5px 0 #0d65d9; /* নিচের ৩ডি শ্যাডো */
+/* ফ্লোটিং হোয়াটসঅ্যাপ বাটন */
+.whatsapp-float {
+    position: fixed;            /* নির্দিষ্ট স্থানে ফিক্সড থাকা */
+    width: 55px;                /* চওড়া ৫৫px */
+    height: 55px;               /* উচ্চতা ৫৫px */
+    bottom: 25px;               /* নিচ থেকে ২৫px উপরে */
+    right: 25px;                /* ডান থেকে ২৫px বামে */
+    background-color: #25d366;  /* সবুজ রঙ */
+    color: #fff;                /* আইকন কালার সাদা */
+    border-radius: 50px;        /* সম্পূর্ণ গোল */
+    text-align: center;         /* সেন্টারে আইকন */
+    font-size: 30px;            /* আইকন সাইজ ৩০px */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3); /* ড্রপ শ্যাডো */
+    z-index: 100;               /* অন্য সব এলিমেন্টের উপরে থাকা */
+    display: flex;              /* ফ্লেক্স সেন্টার */
+    align-items: center;        /* ভর্টিক্যাল সেন্টার */
+    justify-content: center;    /* হরিজন্টাল সেন্টার */
+    text-decoration: none;      /* আন্ডারলাইন বাদ দেওয়া */
+    transition: transform 0.2s; /* জুমিং ট্রান্সিশন */
+}
+
+/* হোয়াটসঅ্যাপ বাটনে মাউস ধরলে জুম হওয়া */
+.whatsapp-float:hover {
+    transform: scale(1.1);      /* ১০% জুম হওয়া */
 }
 
 /* ==========================================
-   ৫. ফুটার সেকশন
+   ৭. ফুটার সেকশন
 ========================================== */
 
-/* পেজের নিচের কপিরাইট অংশের স্টাইল */
+/* কপিরাইট অংশের স্টাইল */
 .footer {
-    margin-top: 40px;           /* ওপরের বাটন থেকে ফুটারের দূরত্ব */
-    padding-top: 15px;          /* ফুটারের ভেতরের ওপরের দূরত্ব */
-    border-top: 1px dashed #ccc;/* ফুটারের ওপরে ড্যাশ ড্যাশ বর্ডার */
-    font-size: 14px;            /* ফুটারের লেখার ফন্ট সাইজ */
-    color: #555;                /* লেখার হালকা ছাই রঙ */
+    margin-top: 40px;           /* উপরের মার্জিন */
+    padding-top: 15px;          /* প্যাডিং */
+    border-top: 1px dashed #ccc;/* ড্যাশ বর্ডার */
+    font-size: 14px;            /* ফন্ট সাইজ */
+    color: #555;                /* ছাই টেক্সট কালার */
 }
 
 /* ==========================================
-   ৬. রেসপন্সিভ ডিজাইন (মোবাইল ও ছোট স্ক্রিনের জন্য)
+   ৮. রেসপন্সিভ ডিজাইন (মোবাইলের জন্য)
 ========================================== */
 
-/* স্ক্রিনের চওড়া ৭৬৮ পিক্সেল বা তার কম হলে নিচের কোড কাজ করবে */
+/* ৭৬৮ পিক্সেল বা তার ছোট স্ক্রিনের জন্য */
 @media screen and (max-width: 768px) {
     body {
-        border-width: 10px;      /* মোবাইলে বাইরের বর্ডার ছোট করে ১০ পিক্সেল করা */
-        margin: 5px;             /* মোবাইলে মার্জিন কমানো */
+        border-width: 10px;      /* বর্ডার ১০px */
+        margin: 5px;             /* মার্জিন কমানো */
         padding: 10px;            /* প্যাডিং কমানো */
     }
 
-    /* মোবাইলে মূল শিরোনামের সাইজ অ্যাডজাস্টমেন্ট */
+    /* মোবাইলে টাইটেল ছোট করা */
     h1, h1.heading-3d {
-        font-size: 42px;         /* ৮০ পিক্সেল থেকে কমিয়ে ৪২ পিক্সেল করা */
+        font-size: 42px;         /* ফন্ট সাইজ ৪২px */
         padding: 8px 15px;       /* প্যাডিং কমানো */
     }
 
-    /* মোবাইলে লোগো বক্সের সাইজ ছোট করা */
+    /* লোগো বক্স ছোট করা */
     .logo-box {
-        width: 50px;             /* চওড়া ৫০ পিক্সেল করা */
-        height: 50px;            /* উচ্চতা ৫০ পিক্সেল করা */
+        width: 50px;             /* চওড়া ৫০px */
+        height: 50px;            /* উচ্চতা ৫০px */
         border-width: 3px;       /* বর্ডার কমানো */
     }
 
-    /* মোবাইলে লেখার ফন্ট সাইজ সামঞ্জস্য করা */
+    /* ছোট স্ক্রিনে ফন্ট সাইজ অ্যাডজাস্টমেন্ট */
     h2 { font-size: 32px; }
     h3 { font-size: 24px; }
     h5, h5.heading-3d { font-size: 22px; }
     
-    /* মোবাইলে বাটনগুলো ফুল স্ক্রিন চওড়া করা */
+    /* মোবাইলে বাটন ফুল স্ক্রিন চওড়া হওয়া */
     .btn {
-        width: 100%;             /* বাটন স্ক্রিনের পুরো চওড়া নিয়ে থাকবে */
-        justify-content: center; /* বাটনের ভিতরের লেখা ও আইকন মাঝখানে থাকবে */
+        width: 100%;             /* ১০০% চওড়া */
+        justify-content: center; /* সেন্টারে রাখা */
     }
 }

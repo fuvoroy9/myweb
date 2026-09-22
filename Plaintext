@@ -1,0 +1,5 @@
+my-website/
+│
+├── index.html       (এইচটিএমএল ফাইল)
+├── style.css        (সিএসএস ফাইল)
+└── script.js        (জাভাস্ক্রিপ্ট ফাইল)
