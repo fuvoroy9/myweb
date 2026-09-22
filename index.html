@@ -1,54 +1,52 @@
 <!-- এইচটিএমএল ভার্সন ৫ ডিক্লেয়ার করা হচ্ছে -->
 <!DOCTYPE html>
 
-<!-- ওয়েবসাইটের ভাষা বাংলা হিসেবে নির্দিষ্ট করা হচ্ছে -->
+<!-- ওয়েবসাইটের ভাষা বাংলা হিসেবে নির্দিষ্ট করা হচ্ছে -->
 <html lang="bn">
 
-<!-- হেড সেকশন শুরু (ওয়েবসাইটের মেটাডেটা ও লিংকসমূহ) -->
+<!-- হেড সেকশন শুরু (ওয়েবসাইটের মেটাডেটা ও লিংকসমূহ) -->
 <head>
     <!-- ব্রাউজারে অক্ষর বা বাংলা টেক্সট সঠিকভাবে দেখানোর জন্য ইউটিএফ-৮ এনকোডিং -->
     <meta charset="UTF-8">
 
-    <!-- মোবাইল ও কম্পিউটার স্ক্রিনে যেন ওয়েবসাইট রেসপন্সিভ দেখায় তার সেটআপ -->
+    <!-- মোবাইল ও কম্পিউটার স্ক্রিনে যেন ওয়েবসাইট রেসপন্সিভ দেখায় তার সেটআপ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ব্রাউজার ট্যাবে দেখানোর জন্য ওয়েবসাইটের শিরোনাম -->
+    <!-- ব্রাউজার ট্যাবে দেখানোর জন্য ওয়েবসাইটের শিরোনাম -->
     <title>টপ গ্রেড টিউটোরিয়ালস</title>
     
     <!-- ওয়েবসাইটের ফেভিকন / ট্যাব লোগো লিংক -->
     <link rel="icon" type="image/png" href="https://i.ibb.co.com/nH4dySW/image.jpg">
     
-    <!-- ৩ডি বাটনের আইকন এবং ক্যালেন্ডার আইকনের জন্য Font Awesome সিডিএন লিংক -->
+    <!-- ৩ডি বাটনের আইকন এবং অন্যান্য আইকনের জন্য Font Awesome সিডিএন লিংক -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- কাস্টম সিএসএস ফাইল যুক্ত করা হচ্ছে -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- বডি সেকশন শুরু (ওয়েবসাইটের দৃশ্যমান উপাদানসমূহ) -->
+<!-- বডি সেকশন শুরু -->
 <body>
 
-    <!-- ১. লাইভ ডিজিটাল ঘড়ি, তারিখ ও বারের বক্স -->
+    <!-- ডার্ক/লাইট মোড টগল বাটন -->
+    <button id="themeToggle" class="theme-toggle-btn" title="থিম পরিবর্তন করুন">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <!-- ১. লাইভ ডিজিটাল ঘড়ি, তারিখ ও বারের বক্স -->
     <div class="clock-container">
-        <!-- ঘড়ির জন্য ফন্ট অসাম আইকন -->
         <i class="fa-regular fa-clock"></i> 
-        <!-- লাইভ সময় দেখানোর জন্য স্প্যান ট্যাগ -->
-        <span id="clock">০০:০০:০০</span>  
+        <span id="clock">০০:০০:০০</span> 
         
-        <!-- নতুন যুক্ত হওয়া: তারিখের সামনে ক্যালেন্ডার আইকন -->
         <i class="fa-regular fa-calendar-days"></i> 
-        <!-- লাইভ তারিখ দেখানোর জন্য স্প্যান ট্যাগ -->
-        <span id="date">--/--/----</span>  
+        <span id="date">--/--/----</span> 
         
-        <!-- নতুন যুক্ত হওয়া: বার দেখানোর জন্য স্প্যান ট্যাগ -->
         <span id="day">--</span>
     </div>
 
     <!-- ২. স্ক্রলিং নোটিশ বার সেকশন -->
     <div class="notice-bar">
-        <!-- নোটিশের শিরোনাম ও মাইক আইকন -->
         <span class="notice-title"><i class="fa-solid fa-bullhorn"></i> নোটিশ:</span>
-        <!-- ডান থেকে বামে স্ক্রল করা নোটিশ বার্তা -->
         <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
             টপ গ্রেড টিউটোরিয়ালসে নতুন ব্যাচে ভর্তি চলছে! বিস্তারিত তথ্যের জন্য যোগাযোগ করুন: ০১৭৪০০৮৪১৫৪।
         </marquee>
@@ -56,30 +54,23 @@
 
     <!-- মূল হেডার ও ৩ডি টাইটেল সেকশন -->
     <h1 class="heading-3d" style="margin-bottom: 5px;">
-        <!-- লোগো বসানোর জন্য গোল বক্স -->
         <span class="logo-box">
-            <!-- লোগোর ইমেজ ফাইল -->
             <img src="https://i.ibb.co.com/nH4dySW/image.jpg" alt="টপ গ্রেড টিউটোরিয়ালস লোগো" class="heading-logo">
         </span>
-        <!-- প্রতিষ্ঠানের নাম -->
         টপ গ্রেড টিউটোরিয়ালস
     </h1>
 
     <!-- স্লোগান সেকশন -->
     <div class="slogan-container">
-        <!-- প্রথম অংশ: Smart Learning -->
         <h2 style="display: inline; margin: 0;"><b>Smart Learning</b></h2>, 
-        <!-- দ্বিতীয় অংশ: Bright Future -->
         <h3 style="display: inline; margin: 0;"><i>Bright Future</i></h3>
     </div>
 
     <!-- ঠিকানা সেকশন -->
     <div class="address-container" style="margin-top: 15px;">
-        <!-- যোগাযোগের পূর্ণ ঠিকানা -->
         <h4 style="margin: 0;"><i>কুমারপাড়া, ওয়ার্ড নং- ০৪, বীরগঞ্জ পৌরসভা, দিনাজপুর। মোবাইল নং- ০১৭৪০০৮৪১৫৪।</i></h4>
     </div>
 
-    <!-- খালি স্পেস ও ডিভাইডার লাইন -->
     <br><hr><br>
 
     <!-- সেকশন টাইটেল -->
@@ -87,63 +78,79 @@
 
     <!-- ৩ডি বাটনসমূহের কন্টেইনার -->
     <div class="button-container">
-        <!-- ১. আমার বাড়ি লিংক বাটন -->
         <a href="https://amarhome.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-home">
             <i class="fa-solid fa-house"></i> আমার বাড়ি
         </a>
 
-        <!-- ২. বীরগঞ্জ পৌর উচ্চ বিদ্যালয় লিংক বাটন -->
         <a href="https://bphs.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-school">
             <i class="fa-solid fa-school"></i> বীরগঞ্জ পৌর উচ্চ বিদ্যালয়
         </a>
 
-        <!-- ৩. টপ গ্রেড টিউটোরিয়ালস লিংক বাটন -->
         <a href="https://bps-self.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-tutorials">
             <i class="fa-solid fa-graduation-cap"></i> টপ গ্রেড টিউটোরিয়ালস
         </a>
 
-        <!-- ৪. মাই বুক লিংক বাটন -->
         <a href="https://mybook-steel.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-book">
             <i class="fa-solid fa-book"></i> মাই বুক
         </a>
 
-        <!-- ৫. ইউটিউব চ্যানেল লিংক বাটন -->
         <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
             <i class="fa-brands fa-youtube"></i> ইউটিউব চ্যানেল
         </a>
 
-        <!-- ৬. ফেসবুক পেজ লিংক বাটন -->
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="btn btn-facebook">
             <i class="fa-brands fa-facebook"></i> ফেসবুক পেজ
         </a>
     </div>
 
-    <!-- ৩. কন্টাক্ট / মেসেজ সেকশন -->
-    <div class="contact-section">
-        <!-- মেসেজ ফর্মের ৩ডি টাইটেল -->
-        <h5 class="heading-3d"><i>আমাদের মেসেজ পাঠান</i></h5>
+    <!-- ৩. সাধারণ প্রশ্নোত্তর (FAQ) সেকশন -->
+    <div class="faq-section">
+        <h5 class="heading-3d"><i>সাধারণ জিজ্ঞাসা (FAQ)</i></h5>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">এখানে কি কি বিষয় পড়ানো হয়? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>আমাদের এখানে ৩য় থেকে ১০ম শ্রেণী পর্যন্ত সকল বিষয় এবং এস.এস.সি পরীক্ষার্থীদের বিশেষ ব্যাচে যত্ন সহকারে পড়ানো হয়।</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">ভর্তির নিয়মাবলী কি? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>সরাসরি অফিসে এসে অথবা আমাদের মোবাইল নম্বরে (০১৭৪০০৮৪১৫৪) কল করে ভর্তি ফরম সংগ্রহ ও জমা দেওয়া যাবে।</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">সাপ্তাহিক পরীক্ষার ব্যবস্থা আছে কি? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>হ্যাঁ, প্রতি সপ্তাহে অধ্যায়ভিত্তিক মডেল টেস্ট ও ফলাফল অভিভাবকের কাছে জানানোর বিশেষ ব্যবস্থা রয়েছে।</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- ইনপুট ফর্ম -->
+    <!-- ৪. কন্টাক্ট / মেসেজ সেকশন -->
+    <div class="contact-section">
+        <h5 class="heading-3d"><i>আমাদের মেসেজ পাঠান</i></h5>
         <form class="contact-form" id="contactForm">
-            <!-- নামের জন্য ইনপুট ফিল্ড -->
             <input type="text" placeholder="আপনার নাম" required>
-            <!-- মোবাইল নম্বরের জন্য ইনপুট ফিল্ড -->
             <input type="tel" placeholder="আপনার মোবাইল নম্বর" required>
-            <!-- বার্তার জন্য টেক্সট এরিয়া -->
             <textarea rows="4" placeholder="আপনার বার্তা বা প্রশ্ন লিখুন..." required></textarea>
-            <!-- ফর্ম সাবমিট করার বাটন -->
             <button type="submit" class="btn btn-tutorials"><i class="fa-solid fa-paper-plane"></i> মেসেজ পাঠান</button>
         </form>
     </div>
 
-    <!-- ৪. ফ্লোটিং হোয়াটসঅ্যাপ বাটন -->
+    <!-- ৫. ফ্লোটিং হোয়াটসঅ্যাপ বাটন -->
     <a href="https://wa.me/8801740084154" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="WhatsApp-এ চ্যাট করুন">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- ৬. ব্যাক টু টপ বাটন -->
+    <button id="backToTop" class="back-to-top-btn" title="উপরে যান">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <!-- ফুটার সেকশন -->
     <footer class="footer">
-        <!-- কপিরাইট নোটিশ -->
         <p>© ২০২৬ টপ গ্রেড টিউটোরিয়ালস | সর্বস্বত্ব সংরক্ষিত</p>
     </footer>
 

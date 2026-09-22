@@ -2,179 +2,218 @@
    ১. পেজ লেআউট ও মূল ব্যাকগ্রাউন্ড
 ========================================== */
 
-/* পেজের সব উপাদানের সাইজ গণনায় বর্ডার ও প্যাডিং অন্তর্ভুক্ত করা */
 * {
-    box-sizing: border-box; /* বর্ডার বা প্যাডিং দিলে যেন এলিমেন্টের সাইজ বেড়ে না যায় */
+    box-sizing: border-box;
 }
 
-/* পুরো ওয়েবসাইটের বডি বা মূল পেজের স্টাইল */
 body {
-    background-color: #f6f6fa; /* পুরো পেজের পটভূমির হালকা ছাই রঙ */
-    color: #1a1a1a;            /* পেজের মূল লেখার গাঢ় রঙ */
-    font-family: Arial, Helvetica, sans-serif; /* লেখার ফন্ট পরিবার নির্ধারণ */
-    text-align: center;        /* পেজের সব উপাদানকে মাঝখানে রাখার জন্য */
-    border: 20px solid transparent; /* চারপাশে ২০ পিক্সেলের দৃশ্যমান বর্ডার স্পেস */
-    border-image: linear-gradient(45deg, #1804ca, #ee0a56, #e3f733) 1; /* ৪৫ ডিগ্রি এঙ্গেলে ৩টি রঙের গ্রেডিয়েন্ট বর্ডার */
-    margin: 15px;              /* পেজের বাইরে ১৫ পিক্সেল খালি জায়গা */
-    padding: 20px;             /* বর্ডারের ভেতরে ২০ পিক্সেল খালি জায়গা */
-    min-height: calc(100vh - 70px); /* স্ক্রিনের উচ্চতা অনুযায়ী পেজ বড় রাখার জন্য */
+    background-color: #f6f6fa;
+    color: #1a1a1a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border: 20px solid transparent;
+    border-image: linear-gradient(45deg, #1804ca, #ee0a56, #e3f733) 1;
+    margin: 15px;
+    padding: 20px;
+    min-height: calc(100vh - 70px);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* ==========================================
-   ২. হেডার ও ডিজিটাল ঘড়ি, তারিখ ও বার সেকশন
+   ২. ডার্ক মোড স্টাইল (Dark Mode)
 ========================================== */
 
-/* লাইভ ডিজিটাল ঘড়ি, তারিখ ও বারের কন্টেইনার */
-.clock-container {
-    background-color: #adadf7; /* গাঢ় নীল ব্যাকগ্রাউন্ড */
-    color: #1b02f8;            /* লেখার রঙ সাদা */
-    display: inline-block;     /* লেখার সমান জায়গা নেবে */
-    padding: 8px 18px;         /* ভেতরে প্যাডিং */
-    border-radius: 20px;       /* চারপাশে ক্যাপসুল শেপ করার জন্য গোল বর্ডার */
-    font-size: 24px;           /* ফন্ট সাইজ */
-    font-weight: bold;         /* মোটা লেখা */
-    margin-bottom: 10px;       /* নিচে খালি জায়গা */
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* হালকা ড্রপ শ্যাডো */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-/* আইকনগুলোর পাশে হালকা ফাঁকা স্পেস দেওয়া */
+body.dark-mode .contact-section,
+body.dark-mode .faq-answer {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode .notice-bar {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #ff7675;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #2b2b2b;
+    color: #fff;
+    border-color: #555;
+}
+
+body.dark-mode .faq-question {
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+/* ডার্ক মোড টগল বাটন */
+.theme-toggle-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1804ca;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   ৩. হেডার ও ডিজিটাল ঘড়ি, তারিখ ও বার সেকশন
+========================================== */
+
+.clock-container {
+    background-color: #adadf7;
+    color: #1b02f8;
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
 .clock-container i {
     margin-left: 5px;
     margin-right: 2px;
 }
 
-/* স্ক্রলিং নোটিশ বার সেকশন */
 .notice-bar {
-    background-color: #ffeaa7; /* হালকা হলুদ ব্যাকগ্রাউন্ড */
-    border: 2px solid #fdcb6e;  /* গাঢ় হলুদ বর্ডার */
-    border-radius: 8px;        /* হালকা গোল কোণা */
-    padding: 8px 12px;         /* বক্সের ভেতরের প্যাডিং */
-    margin: 10px auto 20px auto;/* মার্জিন দিয়ে মাঝখানে আনা */
-    display: flex;             /* নোটিশ ব্যাজ ও টেক্সট পাশাপাশি রাখার জন্য */
-    align-items: center;       /* লম্বালম্বি সেন্টারে রাখা */
-    max-width: 900px;          /* সর্বোচ্চ চওড়া নির্ধারণ */
-    font-weight: bold;         /* বোল্ড টেক্সট */
-    color: #fc0303;            /* টেক্সট কালার */
+    background-color: #ffeaa7;
+    border: 2px solid #fdcb6e;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 10px auto 20px auto;
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    font-weight: bold;
+    color: #fc0303;
 }
 
-/* নোটিশ বারের লাল টাইটেল ব্যাজ */
 .notice-title {
-    background-color: #d63031; /* লাল ব্যাকগ্রাউন্ড */
-    color: #ffffff;            /* টেক্সট কালার সাদা */
-    padding: 3px 8px;          /* চারপাশের প্যাডিং */
-    border-radius: 5px;        /* কোণা গোল করা */
-    margin-right: 10px;        /* টেক্সট থেকে দূরত্ব */
-    white-space: nowrap;       /* যেন ভেঙে নিচের লাইনে না যায় */
-    font-size: 14px;           /* ফন্ট সাইজ */
+    background-color: #d63031;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+    white-space: nowrap;
+    font-size: 14px;
 }
 
 /* ==========================================
-   ৩. প্রধান শিরোনাম (h1) ও ব্যানার স্টাইল
+   ৪. প্রধান শিরোনাম (h1) ও ব্যানার স্টাইল
 ========================================== */
 
-/* মূল শিরোনাম এবং ৩ডি হেডিং এর স্টাইল */
 h1, h1.heading-3d {
-    color: #1804ca;            /* হেডিং এর লেখার নীল রঙ */
-    font-size: 80px;           /* ফন্ট সাইজ */
-    font-weight: bold;         /* লেখাকে মোটা করা */
-    background-color: #e9a8a8; /* গোলাপি ব্যাকগ্রাউন্ড */
-    padding: 10px 20px;        /* চারপাশের প্যাডিং */
-    display: inline-block;     /* কন্টেন্ট অনুযায়ী চওড়া নেওয়া */
-    border: 3px solid #2c0aee; /* ৩ পিক্সেল নীল বর্ডার */
-    border-radius: 12px;       /* কোণা ১২ পিক্সেল গোল করা */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* ৩ডি বক্স শ্যাডো */
-    margin: 0 auto !important; /* মাঝখানে রাখা */
-    line-height: 1.1;          /* লাইনের উচ্চতা */
+    color: #1804ca;
+    font-size: 80px;
+    font-weight: bold;
+    background-color: #e9a8a8;
+    padding: 10px 20px;
+    display: inline-block;
+    border: 3px solid #2c0aee;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto !important;
+    line-height: 1.1;
 
-    /* ৩ডি টেক্সট শ্যাডো */
     text-shadow: 
-        1px 1px 0px #e3f733,   /* ১ম স্তর */
-        2px 2px 0px #e3f733,   /* ২য় স্তর */
-        3px 3px 0px #110582,   /* ৩য় স্তর */
-        4px 4px 0px #110582,   /* ৪থ স্তর */
-        5px 5px 0px #e3f733,   /* ৫ম স্তর */
-        6px 6px 8px rgba(0, 0, 0, 0.35); /* আবছা কালো শ্যাডো */
+        1px 1px 0px #e3f733, 
+        2px 2px 0px #e3f733, 
+        3px 3px 0px #110582, 
+        4px 4px 0px #110582, 
+        5px 5px 0px #e3f733, 
+        6px 6px 8px rgba(0, 0, 0, 0.35);
 }
 
-/* লোগোর বাইরের গোল বক্সের স্টাইল */
 .logo-box {
-    width: 90px;               /* চওড়া ৯০ পিক্সেল */
-    height: 90px;              /* উচ্চতা ৯০ পিক্সেল */
-    border-radius: 50%;        /* গোল শেপ */
-    border: 5px solid #ee0a56; /* লাল বর্ডার */
-    display: inline-block;     /* লেখার পাশে বসানো */
-    vertical-align: middle;    /* লেখার সাথে সোজা সারিবদ্ধ করা */
-    margin-right: 15px;        /* ডানপাশে খালি স্পেস */
-    overflow: hidden;          /* অতিরিক্ত অংশ কেটে বাদ দেওয়া */
-    background-color: #ffffff; /* ব্যাকগ্রাউন্ড সাদা */
-    line-height: 1.1;          /* লাইন হাইট */
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 5px solid #ee0a56;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    overflow: hidden;
+    background-color: #ffffff;
+    line-height: 1.1;
 }
 
-/* গোল বক্সের ভেতরের ইমেজের স্টাইল */
 .heading-logo {
-    width: 100%;               /* পুরো বক্স জুড়ে ইমেজ */
-    height: 100%;              /* পুরো উচ্চতা জুড়ে ইমেজ */
-    object-fit: contain;       /* ছবি যেন না কাটে বা চ্যাপ্টা না হয় */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* ==========================================
-   ৪. সাব-হেডিং ও স্লোগান সেকশন
+   ৫. সাব-হেডিং ও স্লোগান সেকশন
 ========================================== */
 
-/* প্যারাগ্রাফের স্পেসিং */
 p {
-    margin-top: 5px !important;    /* উপরে ৫px স্পেস */
-    margin-bottom: 0 !important;   /* নিচে স্পেস বন্ধ */
+    margin-top: 5px !important;
+    margin-bottom: 0 !important;
 }
 
-/* h2 ও h3 এর সাধারণ সেটআপ */
 h2, h3 {
-    margin: 0 !important;          /* মার্জিন রিমুভ */
-    line-height: 1.2;              /* লাইন হাইট */
+    margin: 0 !important;
+    line-height: 1.2;
 }
 
-/* Smart Learning স্লোগান */
 h2 {
-    color: hsl(352, 92%, 49%);     /* লাল রঙ */
-    font-size: 55px;               /* ফন্ট সাইজ ৫৫px */
+    color: hsl(352, 92%, 49%);
+    font-size: 55px;
 }   
 
-/* Bright Future স্লোগান */
 h3 {
-    color: #910bdf;                /* বেগুনি রঙ */
-    font-size: 40px;               /* ফন্ট সাইজ ৪০px */
+    color: #910bdf;
+    font-size: 40px;
 }
 
-/* ঠিকানা ব্যানার (h4) */
 h4, h4.heading-3d {
-    color: #345a1b;                /* সবুজ টেক্সট */
-    font-size: 15px;               /* ফন্ট সাইজ */
-    font-weight: bold;             /* বোল্ড টেক্সট */
-    background-color: #eef1ee;     /* ব্যাকগ্রাউন্ড */
-    padding: 8px 18px;             /* প্যাডিং */
-    display: inline-block;         /* ইনলাইন ব্লক */
-    border: 3px solid #ee0a15;     /* লাল বর্ডার */
-    border-radius: 12px;           /* কোণা গোল */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* শ্যাডো */
-    margin: 10px auto !important;  /* মার্জিন অটো */
-    line-height: 1.2;              /* লাইন হাইট */
+    color: #345a1b;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #eef1ee;
+    padding: 8px 18px;
+    display: inline-block;
+    border: 3px solid #ee0a15;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px auto !important;
+    line-height: 1.2;
 }
 
-/* সেকশন টাইটেল (h5) */
 h5, h5.heading-3d {
-    color: #54c906;                /* টিয়া সবুজ টেক্সট */
-    font-size: 34px;               /* ফন্ট সাইজ ৩৪px */
-    font-weight: bold;             /* বোল্ড */
-    background-color: #e4eeaf;     /* হলুদ-সবুজ ব্যাকগ্রাউন্ড */
-    padding: 10px 25px;            /* প্যাডিং */
-    display: inline-block;         /* ইনলাইন ব্লক */
-    border: 4px solid #ee0a15;     /* ৪px লাল বর্ডার */
-    border-radius: 12px;           /* কোণা গোল */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* শ্যাডো */
-    margin: 10px auto !important;  /* মার্জিন অটো */
-    line-height: 1.1;              /* লাইন হাইট */
+    color: #54c906;
+    font-size: 34px;
+    font-weight: bold;
+    background-color: #e4eeaf;
+    padding: 10px 25px;
+    display: inline-block;
+    border: 4px solid #ee0a15;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px auto !important;
+    line-height: 1.1;
 
-    /* ৩ডি শ্যাডো */
     text-shadow: 
         1px 1px 0px #82050b, 
         2px 2px 0px #82050b, 
@@ -184,48 +223,43 @@ h5, h5.heading-3d {
 }
 
 /* ==========================================
-   ৫. ৩ডি বাটন সেকশন
+   ৬. ৩ডি বাটন সেকশন
 ========================================== */
 
-/* বাটন কন্টেইনার */
 .button-container {
-    display: flex;              /* ফ্লেক্স বক্স */
-    flex-wrap: wrap;            /* জায়গা না হলে নিচে নেমে যাবে */
-    justify-content: center;   /* সেন্টারে সারিবদ্ধ করা */
-    gap: 15px;                  /* বাটনের মাঝের স্পেস */
-    margin-top: 20px;           /* উপরের মার্জিন */
-    padding: 10px;              /* প্যাডিং */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
-/* সবগুলো ৩ডি বাটনের সাধারণ স্টাইল */
 .btn {
-    display: inline-flex;       /* ইনলাইন ফ্লেক্স */
-    align-items: center;        /* ভর্টিক্যাল সেন্টার */
-    gap: 8px;                   /* আইকন ও লেখার স্পেস */
-    padding: 12px 22px;         /* প্যাডিং */
-    font-size: 16px;            /* ফন্ট সাইজ */
-    font-weight: bold;          /* বোল্ড টেক্সট */
-    color: #ffffff;             /* সাদা টেক্সট */
-    text-decoration: none;      /* আন্ডারলাইন রিমুভ */
-    border-radius: 12px;        /* কোণা গোল */
-    border: 3px solid #f9f8ff;  /* ৩px সাদা বর্ডার */
-    transition: all 0.15s ease-in-out; /* ট্রান্সিশন সময় */
-    cursor: pointer;            /* কার্সার পয়েন্টার */
-    position: relative;         /* ৩ডি পজিশনিং */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 3px solid #f9f8ff;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    position: relative;
 }
 
-/* মাউস ধরলে ৩ডি ফ্লোট ইফেক্ট */
 .btn:hover {
-    transform: translateY(-3px); /* ৩px উপরে উঠবে */
+    transform: translateY(-3px);
 }
 
-/* বাটনে ক্লিক করলে ৩ডি প্রেস ইফেক্ট */
 .btn:active {
-    transform: translateY(4px);                  /* ৪px নিচে নামবে */
-    box-shadow: 0 0 0 transparent !important;   /* শ্যাডো গায়েব হবে */
+    transform: translateY(4px);
+    box-shadow: 0 0 0 transparent !important;
 }
 
-/* কাস্টম বাটন কালার ও নিচের ৩ডি শ্যাডো */
 .btn-home      { background-color: #e67e22; box-shadow: 0 5px 0 #d35400; }
 .btn-school    { background-color: #2ecc71; box-shadow: 0 5px 0 #27ae60; }
 .btn-tutorials { background-color: #9b59b6; box-shadow: 0 5px 0 #8e44ad; }
@@ -234,127 +268,213 @@ h5, h5.heading-3d {
 .btn-facebook  { background-color: #1877f2; box-shadow: 0 5px 0 #0d65d9; }
 
 /* ==========================================
-   ৬. কন্টাক্ট সেকশন ও ফ্লোটিং হোয়াটসঅ্যাপ
+   ৭. সাধারণ জিজ্ঞাসা (FAQ Accordion)
 ========================================== */
 
-/* কন্টাক্ট ফর্ম কন্টেইনার */
+.faq-section {
+    margin-top: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-container {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    background-color: #eef1ee;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #e0e4e0;
+}
+
+.faq-answer {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 15px;
+    max-height: 150px;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-question i {
+    transition: transform 0.3s;
+}
+
+/* ==========================================
+   ৮. কন্টাক্ট সেকশন ও ফ্লোটিং বাটনসমূহ
+========================================== */
+
 .contact-section {
-    margin-top: 40px;           /* উপরের মার্জিন */
-    padding: 20px;              /* প্যাডিং */
-    background-color: #ffffff;  /* সাদা ব্যাকগ্রাউন্ড */
-    border-radius: 15px;        /* কোণা গোল করা */
-    border: 2px dashed #9b59b6; /* ড্যাশ ড্যাশ বেগুনি বর্ডার */
-    max-width: 600px;           /* সর্বোচ্চ চওড়া */
-    margin-left: auto;          /* সেন্টারে আনা */
-    margin-right: auto;         /* সেন্টারে আনা */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* হালকা শ্যাডো */
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 2px dashed #9b59b6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* কন্টাক্ট ফর্মের ডিসপ্লে */
 .contact-form {
-    display: flex;              /* ফ্লেক্স বক্স */
-    flex-direction: column;     /* ফিল্ডগুলো নিচে নিচে থাকবে */
-    gap: 12px;                  /* গ্যাপ */
-    margin-top: 15px;           /* উপরের মার্জিন */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
 }
 
-/* ইনপুট ফিল্ড ও টেক্সট এরিয়া */
 .contact-form input, 
 .contact-form textarea {
-    width: 100%;                /* ফুল উইডথ */
-    padding: 10px 14px;         /* প্যাডিং */
-    border: 2px solid #ccc;     /* বর্ডার */
-    border-radius: 8px;         /* কোণা গোল */
-    font-family: inherit;       /* ফন্ট */
-    font-size: 15px;            /* ফন্ট সাইজ */
-    outline: none;              /* আউটলাইন রিমুভ */
-    transition: border-color 0.2s; /* পরিবর্তন সময় */
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
-/* টাইপ করার সময় বর্ডার কালার বেগুনি হওয়া */
 .contact-form input:focus, 
 .contact-form textarea:focus {
-    border-color: #9b59b6;      /* বেগুনি বর্ডার */
+    border-color: #9b59b6;
 }
 
-/* ফর্মের বাটন */
 .contact-form button {
-    align-self: center;         /* সেন্টারে রাখা */
-    border: none;               /* বর্ডার রিমুভ */
+    align-self: center;
+    border: none;
 }
 
 /* ফ্লোটিং হোয়াটসঅ্যাপ বাটন */
 .whatsapp-float {
-    position: fixed;            /* নির্দিষ্ট স্থানে ফিক্সড থাকা */
-    width: 55px;                /* চওড়া ৫৫px */
-    height: 55px;               /* উচ্চতা ৫৫px */
-    bottom: 25px;               /* নিচ থেকে ২৫px উপরে */
-    right: 25px;                /* ডান থেকে ২৫px বামে */
-    background-color: #25d366;  /* সবুজ রঙ */
-    color: #fff;                /* আইকন কালার সাদা */
-    border-radius: 50px;        /* সম্পূর্ণ গোল */
-    text-align: center;         /* সেন্টারে আইকন */
-    font-size: 30px;            /* আইকন সাইজ ৩০px */
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3); /* ড্রপ শ্যাডো */
-    z-index: 100;               /* অন্য সব এলিমেন্টের উপরে থাকা */
-    display: flex;              /* ফ্লেক্স সেন্টার */
-    align-items: center;        /* ভর্টিক্যাল সেন্টার */
-    justify-content: center;    /* হরিজন্টাল সেন্টার */
-    text-decoration: none;      /* আন্ডারলাইন বাদ দেওয়া */
-    transition: transform 0.2s; /* জুমিং ট্রান্সিশন */
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s;
 }
 
-/* হোয়াটসঅ্যাপ বাটনে মাউস ধরলে জুম হওয়া */
 .whatsapp-float:hover {
-    transform: scale(1.1);      /* ১০% জুম হওয়া */
+    transform: scale(1.1);
+}
+
+/* ব্যাক টু টপ বাটন */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.back-to-top-btn:hover {
+    transform: scale(1.1);
+    background-color: #d35400;
 }
 
 /* ==========================================
-   ৭. ফুটার সেকশন
+   ৯. ফুটার সেকশন
 ========================================== */
 
-/* কপিরাইট অংশের স্টাইল */
 .footer {
-    margin-top: 40px;           /* উপরের মার্জিন */
-    padding-top: 15px;          /* প্যাডিং */
-    border-top: 1px dashed #ccc;/* ড্যাশ বর্ডার */
-    font-size: 14px;            /* ফন্ট সাইজ */
-    color: #555;                /* ছাই টেক্সট কালার */
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+    font-size: 14px;
+    color: #555;
 }
 
 /* ==========================================
-   ৮. রেসপন্সিভ ডিজাইন (মোবাইলের জন্য)
+   ১০. রেসপন্সিভ ডিজাইন (মোবাইলের জন্য)
 ========================================== */
 
-/* ৭৬৮ পিক্সেল বা তার ছোট স্ক্রিনের জন্য */
 @media screen and (max-width: 768px) {
     body {
-        border-width: 10px;      /* বর্ডার ১০px */
-        margin: 5px;             /* মার্জিন কমানো */
-        padding: 10px;            /* প্যাডিং কমানো */
+        border-width: 10px;
+        margin: 5px;
+        padding: 10px;
     }
 
-    /* মোবাইলে টাইটেল ছোট করা */
     h1, h1.heading-3d {
-        font-size: 42px;         /* ফন্ট সাইজ ৪২px */
-        padding: 8px 15px;       /* প্যাডিং কমানো */
+        font-size: 42px;
+        padding: 8px 15px;
     }
 
-    /* লোগো বক্স ছোট করা */
     .logo-box {
-        width: 50px;             /* চওড়া ৫০px */
-        height: 50px;            /* উচ্চতা ৫০px */
-        border-width: 3px;       /* বর্ডার কমানো */
+        width: 50px;
+        height: 50px;
+        border-width: 3px;
     }
 
-    /* ছোট স্ক্রিনে ফন্ট সাইজ অ্যাডজাস্টমেন্ট */
     h2 { font-size: 32px; }
     h3 { font-size: 24px; }
     h5, h5.heading-3d { font-size: 22px; }
     
-    /* মোবাইলে বাটন ফুল স্ক্রিন চওড়া হওয়া */
     .btn {
-        width: 100%;             /* ১০০% চওড়া */
-        justify-content: center; /* সেন্টারে রাখা */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .theme-toggle-btn {
+        top: 15px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
     }
 }
